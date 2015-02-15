@@ -16,3 +16,13 @@ pyr =cell(maxLevels,1);
      pyr(all(emptyCells,2),:) = [];
 end
 
+function [filter ] = createFilter( filterSize )
+%UNTITLED3 Summary of this function goes here
+%   Detailed explanation goes here
+filter=conv([1 1],[1 1]);
+    while size(filter,2)<filterSize
+        filter=conv(filter,[1 2 1]);
+    end
+    filter=filter/sum(filter);
+end
+

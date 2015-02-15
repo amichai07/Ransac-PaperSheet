@@ -8,9 +8,9 @@ function desc = sampleDescriptor(im,pos,descRad)
     % at desc(:,:,i). The per?descriptor dimensions kxk are related to the
     % descRad argument as follows k = 1+2?descRad.
   
-    desc= zeros(descRad,descRad,size(pos,1));
+    desc= zeros(2*descRad+1,2*descRad+1,size(pos,1));
     for i=1:size(pos,1);
-       desc(:,:,i) =im(newPos(1)-descRad:newPos(1)+descRad,newPos(2)-descRad:newPos(2)+descRad);
+       desc(:,:,i) =im(pos(1)-descRad:pos(1)+descRad,pos(2)-descRad:pos(2)+descRad);
     end
 end 
 
